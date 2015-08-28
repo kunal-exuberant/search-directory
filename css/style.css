@@ -342,4 +342,20 @@ textarea {
 . header-logo-account__logo{text-decoration: none;}
 
 
+,main-container {
+    margin: 0 auto;
+    with: 100%;
+}
+
+.profile-content {
+    margin: 0 auto;
+    width: 54%;
+}
+
+.cook-information{
+  margin-left: 215px;
+  margin-top:80px;
+}
+
+
 
