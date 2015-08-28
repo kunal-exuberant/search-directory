@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
 
 urlpatterns = [
-    url(r'^$', include('cookxplor.urls')),
-    url(r'^cookxplor/', include('cookxplor.urls')),
+   # url(r'^$', include('cookxplor.urls')),
+   # url(r'^cookxplor/', include('cookxplor.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(
+        r'^$', 'django.contrib.staticfiles.views.serve', kwargs={
+            'path': 'index.html', 'document_root': settings.STATIC_ROOT}),
+    
 ]
