@@ -16,13 +16,12 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
+from django.views.generic.base import TemplateView
+#from django.views.generic.simple import direct_to_template
 
 urlpatterns = [
-   # url(r'^$', include('cookxplor.urls')),
-   # url(r'^cookxplor/', include('cookxplor.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-    url(
-        r'^$', 'django.contrib.staticfiles.views.serve', kwargs={
-            'path': 'index.html', 'document_root': settings.STATIC_ROOT}),
-    
+     url(r'^cookxplor$', include('cookxplor.urls')),
+     url(r'^register/', include('cookxplor.urls')),
+     url(r'^$', TemplateView.as_view(template_name="index.html")), 
 ]
+#urlpatterns += patterns("",url(r'^$', TemplateView.as_view(template_name="index.html"), name="home"),)
